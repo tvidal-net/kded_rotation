@@ -1,5 +1,5 @@
 #!/bin/bash
-set -eo pipefail
+set -o pipefail
 
 PRIMARY_DISPLAY=$(xrandr | grep 'primary\|\bconnected' | awk '{print $1}') || exit $?
 
@@ -74,8 +74,8 @@ do
   if [ -n "$IS_TOUCH" ];
     then
       # Detect type of touch
-      HAS_WACOM=$(echo "$props" | grep "$WACOM_PROP")
-      HAS_GENERIC=$(echo "$props" | grep "$GENERIC_PROP")
+      HAS_WACOM=$(grep -oF "$WACOM_PROP" <<< "$props")
+      HAS_GENERIC=$(grep -oF "$GENERIC_PROP" <<< "$props")
 
       if [ -n "$HAS_WACOM" ]
       then
