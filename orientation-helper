@@ -1,6 +1,7 @@
 #!/bin/bash
+set -eo pipefail
 
-PRIMARY_DISPLAY=$(xrandr | grep 'primary\|\bconnected' | awk '{print $1}')
+PRIMARY_DISPLAY=$(xrandr | grep 'primary\|\bconnected' | awk '{print $1}') || exit $?
 
 GENERIC_PROP="Coordinate Transformation Matrix"
 GENERIC=""
