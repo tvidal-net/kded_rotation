@@ -1,12 +1,14 @@
 # Author: futpib <futpib@gmail.com>
+# Forked By: thiago <thiago@tvidal.net>
 
+_fork=tvidal-net
 _gitname=kded_rotation
 pkgname=kded-rotation-git
-pkgver=git
+pkgver=HEAD
 pkgrel=1
 pkgdesc='KDED module for handling automatic screen rotation (WIP) '
 arch=(i686 x86_64)
-url='https://github.com/tvidal-net/kded_rotation'
+url="https://github.com/${_fork}/${_gitname}"
 license=(GPL2 GPL3)
 depends=(kded iio-sensor-proxy xorg-xrandr xorg-xinput qt5-sensors)
 makedepends=(extra-cmake-modules git)
