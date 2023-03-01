@@ -70,7 +70,7 @@ do
   verbose "Device %s: " "$device_name"
 
   # Filter for touch devices
-  IS_TOUCH=$(echo $props | grep -i 'Touchscreen\|ELAN\|Pen\|Eraser\|wacom\|maXTouch\|eGalaxTouch\|IPTS')
+  IS_TOUCH=$(echo $props | grep -i 'Touchscreen\|ELAN\|Pen\|Eraser\|wacom\|maXTouch\|eGalaxTouch\|IPTS\|Video BUS')
 
   # Apply Input Matrix for touch devices
   if [ -n "$IS_TOUCH" ];
